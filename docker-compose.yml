@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+
+  solarflux:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: solarflux
+    volumes:
+    - ./config.json:/app/config.json:ro
