@@ -1,15 +1,31 @@
 {
     "global":{
-        "debug_output":"true"
-    },
-    "inverter":{
-        "hostname":"192.168.0.1"
+        "debug_output":"false"
     },
     "influx":{
         "url":"http://localhost:8086",
         "org":"myOrg",
         "bucket":"electricity",
-        "token":"influx_api_token",
-        "measurement":"roof"
+        "token":"influx_api_token"
+    },
+    "inverter":{
+        "enabled": true,
+        "hostname":"192.168.0.1",
+        "measurement":"solar-roof"
+    },
+    "vzlogger":{
+        "enabled": false,
+        "hostname":"192.168.0.2",
+        "measurement":"electricity-meter",
+        "channels":[
+            {
+                "name":"buy",
+                "uuid":"vzlogger_channel_uuid"
+            },
+            {
+                "name":"sell,
+                "uuid":"vzlogger_channel_uuid"
+            }
+        ]
     }
 }

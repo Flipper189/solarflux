@@ -9,6 +9,8 @@ COPY requirements.txt /app
 RUN pip install -r /app/requirements.txt
 
 COPY solarflux.py /app
+COPY inverter.py /app
+COPY vzlogger.py /app
 RUN chmod 550 /app/solarflux.py
 
 RUN echo "0 * * * * root cd /app && python3 ./solarflux.py > /proc/1/fd/1 2>&1" >> /etc/crontab

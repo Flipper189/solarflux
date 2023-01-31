@@ -1,11 +1,13 @@
 # solarflux
-Send data from the Fronius Solar Inverter API to a InfluxDB.
+Send data from the Fronius Solar Inverter API an vzlogger to a InfluxDB.
 
 ## description
 Solarflux fetches the total current value from a Fronius Solar Inverter and writes it to an InfluxDB every hour.
+Optionally, the electricity meter can also be read with a vzlogger.
+For vzlogger, enable the local http server.
 Tested with Fronius Primo.
 
-## local Setup
+## local setup
 - get code "git clone https://github.com/Flipper189/solarflux"
 - copy the config file "cp config.json.example config.json
 - edit the config file
