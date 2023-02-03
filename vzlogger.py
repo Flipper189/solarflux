@@ -23,7 +23,7 @@ def getVzloggerValues(config):
                 #parse data
                 json_data = json.loads(url.text)
                 total_kWh = round(json_data['data'][0]['tuples'][0][1] / 1000, 4)
-                point = influxdb_client.Point(measurement).tag("channel", channel_name).tag("value", "total").field("kWh", total_kWh)
+                point = influxdb_client.Point(measurement).tag("unit", "kWh").field(channel_name, total_kWh)
                 measurement_points.append(point)
                 if debug_output == "true":
                     print(channel_name+": " + str(total_kWh) + " kWh")

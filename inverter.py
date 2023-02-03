@@ -21,7 +21,7 @@ def getInverterValues(config):
             for inverter_number in inverter_list:
                 inverter_data = json_data['Body']['Data']['Inverters'][inverter_number]
                 total_kWh = inverter_data['E_Total'] / 1000
-                point = influxdb_client.Point(measurement).tag("inverter", str(inverter_number)).tag("value", "total").field("kWh", total_kWh)
+                point = influxdb_client.Point(measurement).tag("unit", "kWh").field("inverter_" + str(inverter_number), total_kWh)
                 measurement_points.append(point)
                 if debug_output == "true":
                     print("Total current: " + str(total_kWh) + " kWh")
