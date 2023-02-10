@@ -6,5 +6,6 @@ services:
       context: ./
       dockerfile: Dockerfile
     container_name: solarflux
+    restart: always
     volumes:
     - ./config.json:/app/config.json:ro
